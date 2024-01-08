@@ -160,9 +160,8 @@ const geoSuccess = (position) => {
     };
     const updateDataAndDisplay = async (locationObj) => {
         const weatherJson = await getWeatherFromCoords(locationObj);
-        // console.log(weatherJson);
-        // if (weatherJson) updateDataAndDisplay(weatherJson, locationObj);
-    }
+        if (weatherJson) updateDisplay(weatherJson, locationObj);
+      };
 
 
 

@@ -25,12 +25,12 @@ export const setLocationObject = (locationObj, coordsObj) => {
     // } //works without serverless function
 
     const urlDataObj = {
-       lat: locationObj.getLat(),
-       lon: locationObj.getLon(),
-       units: locationObj.getUnit()
+      lat: locationObj.getLat(),
+      lon: locationObj.getLon(),
+      units: locationObj.getUnit()
     };
     try {
-      const weatherStream = await fetch('./.netlify/functions/get_weather', {
+      const weatherStream = await fetch("./.netlify/functions/get_weather", {
         method: "POST",
         body: JSON.stringify(urlDataObj)
       });
